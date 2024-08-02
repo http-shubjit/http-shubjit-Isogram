@@ -12,7 +12,23 @@ public class Isogram {
      * @param str a String.
      * @return true if str is an isogram, false otherwise.
      */
-    public boolean isIsogram(String str){
-        return false;
+    public boolean isIsogram(String str) {
+  int length = str.length();
+        
+        // Check each character
+        for (int i = 0; i < length; i++) {
+            char char1 = str.charAt(i);
+            // Compare with every subsequent character
+            for (int j = i + 1; j < length; j++) {
+                char char2 = str.charAt(j);
+                if (char1 == char2) {
+                    return false; // Found a duplicate
+                }
+            }
+        }
+        
+        return true; // No duplicates found
+    
+
     }
 }
